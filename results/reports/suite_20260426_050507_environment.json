@@ -1,0 +1,14 @@
+{
+  "platform": "Windows-11-10.0.22631-SP0",
+  "python": "3.12.2",
+  "torch": "2.5.1+cu121",
+  "transformers_device_count": 2,
+  "cpu_physical_cores": 14,
+  "cpu_logical_cores": 20,
+  "ram_gb": 34.07,
+  "cuda_available": true,
+  "gpu_name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "gpu_total_memory_gb": 6.44,
+  "cuda_version": "12.1",
+  "bf16_supported": true
+}
