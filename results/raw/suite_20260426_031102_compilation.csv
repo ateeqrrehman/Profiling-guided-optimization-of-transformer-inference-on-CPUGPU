@@ -1,0 +1,67 @@
+run_id,experiment,variant,device,device_name,model_name,model_source,batch_size,seq_label,seq_length,precision,compiled,requested_compiled,warmup_runs,measure_runs,mean_latency_ms,std_latency_ms,samples_per_sec,tokens_per_sec,peak_memory_mb,avg_memory_mb,cpu_utilization_percent,gpu_utilization_percent,quality_loss,quality_perplexity,profile_trace_path,profile_summary_path,notes
+suite_20260426_031102,compilation,cpu_short_eager,cpu,CPU,distilgpt2,huggingface,4,short,32,fp32,False,False,3,10,684.6871299989289,87.83093577718824,5.842084398470083,186.94670075104267,4978.429952,4963.4729984000005,20.28,0.0,7.86090624332428,2593.869987952058,,,
+suite_20260426_031102,compilation,cpu_short_compiled,cpu,CPU,distilgpt2,huggingface,4,short,32,fp32,False,True,3,10,670.0675300002331,47.24619717887218,5.969547576792161,191.02552245734915,5353.627648,5341.1639296,17.47,0.0,7.86090624332428,2593.869987952058,,,"Compiled execution failed at runtime: backend='inductor' raised:
+RuntimeError: Compiler: cl is not found.
+
+Set TORCH_LOGS=""+dynamo"" and TORCHDYNAMO_VERBOSE=1 for more information
+
+
+You can suppress this exception and fall back to eager by setting:
+    import torch._dynamo
+    torch._dynamo.config.suppress_errors = True
+"
+suite_20260426_031102,compilation,cpu_medium_eager,cpu,CPU,distilgpt2,huggingface,4,medium,128,fp32,False,False,3,10,1396.0825800022576,96.95905301609298,2.8651600251279774,366.7404832163811,5321.551872,5321.551872,27.1,0.0,7.86090624332428,2593.869987952058,,,
+suite_20260426_031102,compilation,cpu_medium_compiled,cpu,CPU,distilgpt2,huggingface,4,medium,128,fp32,False,True,3,10,1486.9247199982055,271.11577584201723,2.690116013408417,344.3348497162774,5453.123584,5355.147264,19.86,0.0,7.86090624332428,2593.869987952058,C:\Users\katee\Downloads\Profiling-guided-optimization-of-transformer-inference-on-CPU-GPU-main\results\profiles\suite_20260426_031102\compilation\cpu_medium_compiled_trace.json,C:\Users\katee\Downloads\Profiling-guided-optimization-of-transformer-inference-on-CPU-GPU-main\results\profiles\suite_20260426_031102\compilation\cpu_medium_compiled_ops.csv,"Compiled execution failed at runtime: backend='inductor' raised:
+RuntimeError: Compiler: cl is not found.
+
+Set TORCH_LOGS=""+dynamo"" and TORCHDYNAMO_VERBOSE=1 for more information
+
+
+You can suppress this exception and fall back to eager by setting:
+    import torch._dynamo
+    torch._dynamo.config.suppress_errors = True
+"
+suite_20260426_031102,compilation,cpu_long_eager,cpu,CPU,distilgpt2,huggingface,4,long,256,fp32,False,False,3,10,2566.4344200020423,77.3189888583555,1.5585825878990578,398.9971425021588,5552.488448,5552.488448,25.83,0.0,7.86090624332428,2593.869987952058,,,
+suite_20260426_031102,compilation,cpu_long_compiled,cpu,CPU,distilgpt2,huggingface,4,long,256,fp32,False,True,3,10,2543.78682999959,59.110865066974576,1.5724588054419029,402.54945419312713,5547.474944,5547.474944,26.15,0.0,7.86090624332428,2593.869987952058,,,"Compiled execution failed at runtime: backend='inductor' raised:
+RuntimeError: Compiler: cl is not found.
+
+Set TORCH_LOGS=""+dynamo"" and TORCHDYNAMO_VERBOSE=1 for more information
+
+
+You can suppress this exception and fall back to eager by setting:
+    import torch._dynamo
+    torch._dynamo.config.suppress_errors = True
+"
+suite_20260426_031102,compilation,cuda_short_eager,cuda,NVIDIA GeForce RTX 4050 Laptop GPU,distilgpt2,huggingface,4,short,32,fp32,False,False,3,10,18.00883000396425,2.9547826484866624,222.11326327804125,7107.62442489732,363.173888,337.627136,2.02,21.9,7.860910773277283,2593.881738087813,,,
+suite_20260426_031102,compilation,cuda_short_compiled,cuda,NVIDIA GeForce RTX 4050 Laptop GPU,distilgpt2,huggingface,4,short,32,fp32,False,True,3,10,26.930660000653006,11.823866119610802,148.52959414670894,4752.947012694686,1020.076032,994.52928,6.65,21.6,7.860910773277283,2593.881738087813,,,"Compiled execution failed at runtime: backend='inductor' raised:
+RuntimeError: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at https://github.com/openai/triton
+
+Set TORCH_LOGS=""+dynamo"" and TORCHDYNAMO_VERBOSE=1 for more information
+
+
+You can suppress this exception and fall back to eager by setting:
+    import torch._dynamo
+    torch._dynamo.config.suppress_errors = True
+"
+suite_20260426_031102,compilation,cuda_medium_eager,cuda,NVIDIA GeForce RTX 4050 Laptop GPU,distilgpt2,huggingface,4,medium,128,fp32,False,False,3,10,28.588919996400364,2.257776036974927,139.9143444559515,17909.03609036179,1098.868736,994.535424,3.6,25.3,7.860910773277283,2593.881738087813,,,
+suite_20260426_031102,compilation,cuda_medium_compiled,cuda,NVIDIA GeForce RTX 4050 Laptop GPU,distilgpt2,huggingface,4,medium,128,fp32,False,True,3,10,28.820889997587074,4.1189839856171755,138.78821925120585,17764.89206415435,1098.87488,994.541568,2.03,36.4,7.860910773277283,2593.881738087813,C:\Users\katee\Downloads\Profiling-guided-optimization-of-transformer-inference-on-CPU-GPU-main\results\profiles\suite_20260426_031102\compilation\cuda_medium_compiled_trace.json,C:\Users\katee\Downloads\Profiling-guided-optimization-of-transformer-inference-on-CPU-GPU-main\results\profiles\suite_20260426_031102\compilation\cuda_medium_compiled_ops.csv,"Compiled execution failed at runtime: backend='inductor' raised:
+RuntimeError: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at https://github.com/openai/triton
+
+Set TORCH_LOGS=""+dynamo"" and TORCHDYNAMO_VERBOSE=1 for more information
+
+
+You can suppress this exception and fall back to eager by setting:
+    import torch._dynamo
+    torch._dynamo.config.suppress_errors = True
+"
+suite_20260426_031102,compilation,cuda_long_eager,cuda,NVIDIA GeForce RTX 4050 Laptop GPU,distilgpt2,huggingface,4,long,256,fp32,False,False,3,10,74.0800199957448,12.917670297734533,53.99566577101035,13822.89043737865,1203.195904,994.541568,3.65,53.0,7.860910773277283,2593.881738087813,,,
+suite_20260426_031102,compilation,cuda_long_compiled,cuda,NVIDIA GeForce RTX 4050 Laptop GPU,distilgpt2,huggingface,4,long,256,fp32,False,True,3,10,64.90096000197809,28.767281775308845,61.632370305124695,15777.886798111922,1204.77184,996.117504,3.24,54.5,7.860910773277283,2593.881738087813,,,"Compiled execution failed at runtime: backend='inductor' raised:
+RuntimeError: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at https://github.com/openai/triton
+
+Set TORCH_LOGS=""+dynamo"" and TORCHDYNAMO_VERBOSE=1 for more information
+
+
+You can suppress this exception and fall back to eager by setting:
+    import torch._dynamo
+    torch._dynamo.config.suppress_errors = True
+"

@@ -1,0 +1,10 @@
+{
+  "platform": "Windows-11-10.0.22631-SP0",
+  "python": "3.12.2",
+  "torch": "2.11.0+cpu",
+  "transformers_device_count": 1,
+  "cpu_physical_cores": 14,
+  "cpu_logical_cores": 20,
+  "ram_gb": 34.07,
+  "cuda_available": false
+}

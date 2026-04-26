@@ -1,0 +1,20 @@
+     experiment device  batch_size  seq_length    precision compiled  mean_latency_ms  std_latency_ms  tokens_per_sec  peak_memory_mb  cpu_utilization_percent  gpu_utilization_percent
+       baseline    cpu           1          32         fp32       no        125.79308       77.899359      254.386012      741.408768                    48.87                      NaN
+       baseline    cpu           1         128         fp32       no        753.37832       62.667907      169.901358      760.737792                    41.92                      NaN
+       baseline    cpu           1         256         fp32       no       1063.42181       96.137116      240.732321      801.361920                    42.13                      NaN
+     batch_size    cpu           1         128         fp32       no        792.50624       68.516720      161.512924      834.060288                    44.07                      NaN
+     batch_size    cpu           2         128         fp32       no       1109.99006      115.836107      230.632696      834.203648                    43.55                      NaN
+     batch_size    cpu           4         128         fp32       no       2384.59799      271.822964      214.711244      887.369728                    44.86                      NaN
+     batch_size    cpu           8         128         fp32       no       3975.42496      215.173170      257.582525      994.574336                    44.03                      NaN
+     batch_size    cpu          16         128         fp32       no       6677.43013      253.606897      306.704819     1202.442240                    44.03                      NaN
+sequence_length    cpu           1          32         fp32       no        225.41974        5.147175      141.957399     1235.738624                    44.27                      NaN
+sequence_length    cpu           1         128         fp32       no        863.98029       66.602581      148.151528      846.876672                    44.31                      NaN
+sequence_length    cpu           1         256         fp32       no       1227.85318       50.418527      208.493983      873.164800                    44.47                      NaN
+      precision    cpu           4         128         fp32       no       2170.42007      120.616572      235.899035      947.830784                    44.40                      NaN
+      precision    cpu           4         128 int8_dynamic       no       1893.43305       97.345399      270.408294     1386.672128                    43.67                      NaN
+    compilation    cpu           4          32         fp32       no        850.03902       82.887544      150.581323      994.193408                    44.37                      NaN
+    compilation    cpu           4          32         fp32       no        804.50790       63.635502      159.103472     1410.109440                    45.71                      NaN
+    compilation    cpu           4         128         fp32       no       2037.12638       88.110412      251.334431     1355.632640                    44.81                      NaN
+    compilation    cpu           4         128         fp32       no       2038.33570       85.247511      251.185318     1378.844672                    44.67                      NaN
+    compilation    cpu           4         256         fp32       no       3673.72103       97.565926      278.736461     1489.920000                    44.32                      NaN
+    compilation    cpu           4         256         fp32       no       3839.90013      100.805167      266.673602     1502.347264                    44.17                      NaN

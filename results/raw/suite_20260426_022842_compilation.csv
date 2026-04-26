@@ -1,0 +1,16 @@
+run_id,experiment,variant,device,device_name,model_name,model_source,batch_size,seq_label,seq_length,precision,compiled,requested_compiled,warmup_runs,measure_runs,mean_latency_ms,std_latency_ms,samples_per_sec,tokens_per_sec,peak_memory_mb,avg_memory_mb,cpu_utilization_percent,gpu_utilization_percent,quality_loss,quality_perplexity,profile_trace_path,profile_summary_path,notes
+suite_20260426_022842,compilation,cpu_short_eager,cpu,CPU,distilgpt2,huggingface,4,short,32,fp32,False,False,3,10,850.0390200002585,82.88754401311327,4.705666335174571,150.58132272558626,994.193408,994.193408,44.37,,7.860907196998596,2593.8724616604254,,,
+suite_20260426_022842,compilation,cpu_short_compiled,cpu,CPU,distilgpt2,huggingface,4,short,32,fp32,False,True,3,10,804.5078999988618,63.63550234962734,4.971983494513427,159.10347182442968,1410.10944,1409.918976,45.71,,7.860907196998596,2593.8724616604254,,,"Compiled execution failed at runtime: RuntimeError: Compiler: cl is not found.
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=""+dynamo""
+"
+suite_20260426_022842,compilation,cpu_medium_eager,cpu,CPU,distilgpt2,huggingface,4,medium,128,fp32,False,False,3,10,2037.1263799999726,88.11041200978987,1.9635502437507357,251.33443120009417,1355.63264,1352.9735168000002,44.81,,7.860907196998596,2593.8724616604254,,,
+suite_20260426_022842,compilation,cpu_medium_compiled,cpu,CPU,distilgpt2,huggingface,4,medium,128,fp32,False,True,3,10,2038.3357000013348,85.24751073866308,1.962385293059127,251.18531751156826,1378.844672,1378.844672,44.67,,7.860907196998596,2593.8724616604254,C:\Users\katee\Downloads\Profiling-guided-optimization-of-transformer-inference-on-CPU-GPU-main\results\profiles\suite_20260426_022842\compilation\cpu_medium_compiled_trace.json,C:\Users\katee\Downloads\Profiling-guided-optimization-of-transformer-inference-on-CPU-GPU-main\results\profiles\suite_20260426_022842\compilation\cpu_medium_compiled_ops.csv,"Compiled execution failed at runtime: RuntimeError: Compiler: cl is not found.
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=""+dynamo""
+"
+suite_20260426_022842,compilation,cpu_long_eager,cpu,CPU,distilgpt2,huggingface,4,long,256,fp32,False,False,3,10,3673.7210300023435,97.56592634182695,1.088814302265474,278.7364613799613,1489.92,1489.92,44.32,,7.860907196998596,2593.8724616604254,,,
+suite_20260426_022842,compilation,cpu_long_compiled,cpu,CPU,distilgpt2,huggingface,4,long,256,fp32,False,True,3,10,3839.9001300000236,100.80516662309742,1.0416937588426227,266.6736022637114,1502.347264,1502.347264,44.17,,7.860907196998596,2593.8724616604254,,,"Compiled execution failed at runtime: RuntimeError: Compiler: cl is not found.
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=""+dynamo""
+"
