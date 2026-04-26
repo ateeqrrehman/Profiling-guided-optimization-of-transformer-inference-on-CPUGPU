@@ -37,6 +37,39 @@ def _cleanup_device(device: str) -> None:
         torch.cuda.empty_cache()
 
 
+def _failure_row(condition: BenchmarkCondition, artifacts, settings, run_id: str, note: str) -> dict[str, object]:
+    return {
+        "run_id": run_id,
+        "experiment": condition.experiment,
+        "variant": condition.variant,
+        "device": condition.device,
+        "device_name": get_device_name(condition.device),
+        "model_name": artifacts.model_name,
+        "model_source": artifacts.model_source,
+        "batch_size": condition.batch_size,
+        "seq_label": condition.seq_label,
+        "seq_length": condition.seq_length,
+        "precision": condition.precision,
+        "compiled": artifacts.compiled,
+        "requested_compiled": condition.compiled,
+        "warmup_runs": settings.warmup_runs,
+        "measure_runs": settings.measure_runs,
+        "mean_latency_ms": float("nan"),
+        "std_latency_ms": float("nan"),
+        "samples_per_sec": float("nan"),
+        "tokens_per_sec": float("nan"),
+        "peak_memory_mb": float("nan"),
+        "avg_memory_mb": float("nan"),
+        "cpu_utilization_percent": float("nan"),
+        "gpu_utilization_percent": float("nan"),
+        "quality_loss": float("nan"),
+        "quality_perplexity": float("nan"),
+        "profile_trace_path": "",
+        "profile_summary_path": "",
+        "notes": _stringify_notes(list(artifacts.notes) + [note]),
+    }
+
+
 def run_conditions(
     conditions: list[BenchmarkCondition],
     settings,
@@ -110,36 +143,13 @@ def run_conditions(
                 )
             else:
                 rows.append(
-                    {
-                        "run_id": run_id,
-                        "experiment": condition.experiment,
-                        "variant": condition.variant,
-                        "device": condition.device,
-                        "device_name": get_device_name(condition.device),
-                        "model_name": artifacts.model_name,
-                        "model_source": artifacts.model_source,
-                        "batch_size": condition.batch_size,
-                        "seq_label": condition.seq_label,
-                        "seq_length": condition.seq_length,
-                        "precision": condition.precision,
-                        "compiled": artifacts.compiled,
-                        "requested_compiled": condition.compiled,
-                        "warmup_runs": settings.warmup_runs,
-                        "measure_runs": settings.measure_runs,
-                        "mean_latency_ms": float("nan"),
-                        "std_latency_ms": float("nan"),
-                        "samples_per_sec": float("nan"),
-                        "tokens_per_sec": float("nan"),
-                        "peak_memory_mb": float("nan"),
-                        "avg_memory_mb": float("nan"),
-                        "quality_loss": float("nan"),
-                        "quality_perplexity": float("nan"),
-                        "profile_trace_path": "",
-                        "profile_summary_path": "",
-                        "notes": _stringify_notes(
-                            list(artifacts.notes) + [f"Benchmark failed: {exc}"]
-                        ),
-                    }
+                    _failure_row(
+                        condition=condition,
+                        artifacts=artifacts,
+                        settings=settings,
+                        run_id=run_id,
+                        note=f"Benchmark failed: {exc}",
+                    )
                 )
                 continue
 
@@ -165,6 +175,8 @@ def run_conditions(
             "tokens_per_sec": measurement.tokens_per_sec,
             "peak_memory_mb": measurement.peak_memory_mb,
             "avg_memory_mb": measurement.avg_memory_mb,
+            "cpu_utilization_percent": measurement.cpu_utilization_percent,
+            "gpu_utilization_percent": measurement.gpu_utilization_percent,
             "quality_loss": float("nan"),
             "quality_perplexity": float("nan"),
             "profile_trace_path": "",
