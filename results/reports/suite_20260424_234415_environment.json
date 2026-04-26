@@ -1,0 +1,14 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.13",
+  "torch": "2.11.0+cu130",
+  "transformers_device_count": 2,
+  "cpu_physical_cores": 16,
+  "cpu_logical_cores": 24,
+  "ram_gb": 33.94,
+  "cuda_available": true,
+  "gpu_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "gpu_total_memory_gb": 8.55,
+  "cuda_version": "13.0",
+  "bf16_supported": true
+}

@@ -1,0 +1,31 @@
+run_id,experiment,variant,device,device_name,model_name,model_source,batch_size,seq_label,seq_length,precision,compiled,requested_compiled,warmup_runs,measure_runs,mean_latency_ms,std_latency_ms,samples_per_sec,tokens_per_sec,peak_memory_mb,avg_memory_mb,quality_loss,quality_perplexity,profile_trace_path,profile_summary_path,notes
+suite_20260424_234415,compilation,cpu_short_eager,cpu,CPU,distilgpt2,huggingface,4,short,32,fp32,False,False,3,10,59.55917999999656,3.2497147485135853,67.16009186157753,2149.122939570481,2968.633344,2968.6276096,7.860907196998596,2593.8724616604254,,,
+suite_20260424_234415,compilation,cpu_short_compiled,cpu,CPU,distilgpt2,huggingface,4,short,32,fp32,False,True,3,10,68.30762999961735,5.498900470151565,58.55861197383671,1873.8755831627748,3348.443136,3348.443136,7.860907196998596,2593.8724616604254,,,"Compiled execution failed at runtime: RuntimeError: Compiler: cl is not found.
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=""+dynamo""
+"
+suite_20260424_234415,compilation,cpu_medium_eager,cpu,CPU,distilgpt2,huggingface,4,medium,128,fp32,False,False,3,10,197.88205000004382,8.276512559687573,20.214061861594388,2587.3999182840817,3350.372352,3348.0445952,7.860907196998596,2593.8724616604254,,,
+suite_20260424_234415,compilation,cpu_medium_compiled,cpu,CPU,distilgpt2,huggingface,4,medium,128,fp32,False,True,3,10,204.02528000049642,10.762121845282211,19.605413603599846,2509.4929412607803,3386.1632,3374.9458944,7.860907196998596,2593.8724616604254,,,"Compiled execution failed at runtime: RuntimeError: Compiler: cl is not found.
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=""+dynamo""
+"
+suite_20260424_234415,compilation,cpu_long_eager,cpu,CPU,distilgpt2,huggingface,4,long,256,fp32,False,False,3,10,382.252220000737,13.906134313621664,10.464295014407734,2678.85952368838,3379.871744,3372.3514880000002,7.860907196998596,2593.8724616604254,,,
+suite_20260424_234415,compilation,cpu_long_compiled,cpu,CPU,distilgpt2,huggingface,4,long,256,fp32,False,True,3,10,383.39034999953583,15.473570624148566,10.433230779034588,2670.9070794328545,3392.704512,3389.8504192,7.860907196998596,2593.8724616604254,,,"Compiled execution failed at runtime: RuntimeError: Compiler: cl is not found.
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=""+dynamo""
+"
+suite_20260424_234415,compilation,cuda_short_eager,cuda,NVIDIA GeForce RTX 5060 Laptop GPU,distilgpt2,huggingface,4,short,32,fp32,False,False,3,10,6.983180001407163,1.8981964589927942,572.804939754377,18329.758072140063,364.222464,338.675712,7.860914468765259,2593.8913237642996,,,
+suite_20260424_234415,compilation,cuda_short_compiled,cuda,NVIDIA GeForce RTX 5060 Laptop GPU,distilgpt2,huggingface,4,short,32,fp32,False,True,3,10,4.627530000288971,0.6409601875133004,864.3920190145102,27660.544608464326,1021.124608,995.577856,7.860914468765259,2593.8913237642996,,,"Compiled execution failed at runtime: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=""+dynamo""
+"
+suite_20260424_234415,compilation,cuda_medium_eager,cuda,NVIDIA GeForce RTX 5060 Laptop GPU,distilgpt2,huggingface,4,medium,128,fp32,False,False,3,10,15.014490000612568,1.1301422481259331,266.4093152572486,34100.39235292782,1099.917312,995.584,7.860914468765259,2593.8913237642996,,,
+suite_20260424_234415,compilation,cuda_medium_compiled,cuda,NVIDIA GeForce RTX 5060 Laptop GPU,distilgpt2,huggingface,4,medium,128,fp32,False,True,3,10,14.915470000414643,0.6973209644121614,268.17793873668086,34326.77615829515,1099.923456,995.590144,7.860914468765259,2593.8913237642996,,,"Compiled execution failed at runtime: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=""+dynamo""
+"
+suite_20260424_234415,compilation,cuda_long_eager,cuda,NVIDIA GeForce RTX 5060 Laptop GPU,distilgpt2,huggingface,4,long,256,fp32,False,False,3,10,28.3865399993374,0.5970236643250093,140.91185470625754,36073.43480480193,1204.252672,995.598336,7.860914468765259,2593.8913237642996,,,
+suite_20260424_234415,compilation,cuda_long_compiled,cuda,NVIDIA GeForce RTX 5060 Laptop GPU,distilgpt2,huggingface,4,long,256,fp32,False,True,3,10,27.67120999924373,0.2504841241066128,144.5545749574855,37005.97118911629,1205.820416,997.16608,7.860914468765259,2593.8913237642996,,,"Compiled execution failed at runtime: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=""+dynamo""
+"

@@ -1,0 +1,13 @@
+     experiment device  batch_size  seq_length    precision compiled  mean_latency_ms  tokens_per_sec  peak_memory_mb
+       baseline    cpu           1          16         fp32       no          1.91375     8360.548660      391.892992
+       baseline    cpu           1          64         fp32       no          2.81390    22744.233992      393.007104
+     batch_size    cpu           1          64         fp32       no          3.88425    16476.797323      438.804480
+     batch_size    cpu           2          64         fp32       no          4.63685    27604.947320      439.099392
+sequence_length    cpu           1          16         fp32       no          3.31680     4823.926678      427.909120
+sequence_length    cpu           1          64         fp32       no          4.46155    14344.790484      427.999232
+      precision    cpu           2          64         fp32       no          3.27540    39079.196430      447.115264
+      precision    cpu           2          64 int8_dynamic       no          2.76560    46282.904249      464.191488
+    compilation    cpu           2          16         fp32       no          2.42105    13217.405663      456.126464
+    compilation    cpu           2          16         fp32       no          2.69385    11878.909370      507.478016
+    compilation    cpu           2          64         fp32       no          2.67810    47795.078639      510.128128
+    compilation    cpu           2          64         fp32       no          3.38950    37763.681963      533.569536

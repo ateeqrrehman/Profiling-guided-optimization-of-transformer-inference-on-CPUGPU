@@ -1,0 +1,11 @@
+run_id,experiment,variant,device,device_name,model_name,model_source,batch_size,seq_label,seq_length,precision,compiled,requested_compiled,warmup_runs,measure_runs,mean_latency_ms,std_latency_ms,samples_per_sec,tokens_per_sec,peak_memory_mb,avg_memory_mb,quality_loss,quality_perplexity,profile_trace_path,profile_summary_path,notes
+suite_20260424_232302,compilation,cpu_short_eager,cpu,CPU,random-fallback,random_fallback,2,short,16,fp32,False,False,1,2,2.421050001430558,0.11108647743148563,826.0878539551985,13217.405663283176,456.126464,456.124416,8.208532810211182,3672.1507697999473,,,Using the local random fallback model by request.
+suite_20260424_232302,compilation,cpu_short_compiled,cpu,CPU,random-fallback,random_fallback,2,short,16,fp32,False,True,1,2,2.693849999559461,0.5733928895307172,742.4318355985189,11878.909369576302,507.478016,507.478016,7.983336329460144,2931.695869016526,,,"Using the local random fallback model by request. | Compiled execution failed at runtime: RuntimeError: Compiler: cl is not found.
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=""+dynamo""
+"
+suite_20260424_232302,compilation,cpu_medium_eager,cpu,CPU,random-fallback,random_fallback,2,medium,64,fp32,False,False,1,2,2.678099997865502,0.17635243124893252,746.7981037280308,47795.07863859397,510.128128,510.128128,8.208532810211182,3672.1507697999473,,,Using the local random fallback model by request.
+suite_20260424_232302,compilation,cpu_medium_compiled,cpu,CPU,random-fallback,random_fallback,2,medium,64,fp32,False,True,1,2,3.389499999684631,0.864933012756572,590.0575306641351,37763.68196250465,533.569536,533.569536,8.18590259552002,3589.982459438176,,,"Using the local random fallback model by request. | Compiled execution failed at runtime: RuntimeError: Compiler: cl is not found.
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=""+dynamo""
+"

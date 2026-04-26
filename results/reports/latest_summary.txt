@@ -1,0 +1,40 @@
+     experiment device  batch_size  seq_length    precision compiled  mean_latency_ms  tokens_per_sec  peak_memory_mb
+       baseline    cpu           1          32         fp32       no         19.30961     1657.205920     1098.211328
+       baseline    cpu           1         128         fp32       no         61.29030     2088.421822     1118.154752
+       baseline    cpu           1         256         fp32       no        102.22929     2504.174684     1145.417728
+       baseline   cuda           1          32         fp32       no          5.78417     5532.340855      345.001984
+       baseline   cuda           1         128         fp32       no          8.08175    15838.153864      364.596736
+       baseline   cuda           1         256         fp32       no         10.19519    25109.880246      390.723584
+     batch_size    cpu           1         128         fp32       no         57.56676     2223.505370     1637.412864
+     batch_size    cpu           2         128         fp32       no         91.07316     2810.926951     1637.781504
+     batch_size    cpu           4         128         fp32       no        164.29745     3116.299127     1707.302912
+     batch_size    cpu           8         128         fp32       no        302.22642     3388.188233     1862.512640
+     batch_size    cpu          16         128         fp32       no        578.78350     3538.456089     2144.026624
+     batch_size   cuda           1         128         fp32       no          5.52281    23176.607563      364.596736
+     batch_size   cuda           2         128         fp32       no          8.66559    29542.131582      390.519296
+     batch_size   cuda           4         128         fp32       no         15.13824    33821.633164      443.539456
+     batch_size   cuda           8         128         fp32       no         28.27747    36212.574887      546.055680
+     batch_size   cuda          16         128         fp32       no         61.18870    33470.232249      753.893376
+sequence_length    cpu           1          32         fp32       no         19.18691     1667.803727     2165.125120
+sequence_length    cpu           1         128         fp32       no         59.40626     2154.655082     2157.682688
+sequence_length    cpu           1         256         fp32       no        100.51876     2546.788281     2167.934976
+sequence_length   cuda           1          32         fp32       no          4.89379     6538.899300      345.001984
+sequence_length   cuda           1         128         fp32       no          5.93101    21581.484436      364.596736
+sequence_length   cuda           1         256         fp32       no          8.78439    29142.604095      390.723584
+      precision    cpu           4         128         fp32       no        166.91612     3067.408948     2182.959104
+      precision    cpu           4         128 int8_dynamic       no        118.24155     4330.119150     2479.398912
+      precision   cuda           4         128         fp32       no         14.87056    34430.445121      443.539456
+      precision   cuda           4         128         fp16       no         16.53259    30969.134299      561.564160
+      precision   cuda           4         128         bf16       no         12.03161    42554.570834      729.590272
+    compilation    cpu           4          32         fp32       no         59.55918     2149.122940     2968.633344
+    compilation    cpu           4          32         fp32       no         68.30763     1873.875583     3348.443136
+    compilation    cpu           4         128         fp32       no        197.88205     2587.399918     3350.372352
+    compilation    cpu           4         128         fp32       no        204.02528     2509.492941     3386.163200
+    compilation    cpu           4         256         fp32       no        382.25222     2678.859524     3379.871744
+    compilation    cpu           4         256         fp32       no        383.39035     2670.907079     3392.704512
+    compilation   cuda           4          32         fp32       no          6.98318    18329.758072      364.222464
+    compilation   cuda           4          32         fp32       no          4.62753    27660.544608     1021.124608
+    compilation   cuda           4         128         fp32       no         15.01449    34100.392353     1099.917312
+    compilation   cuda           4         128         fp32       no         14.91547    34326.776158     1099.923456
+    compilation   cuda           4         256         fp32       no         28.38654    36073.434805     1204.252672
+    compilation   cuda           4         256         fp32       no         27.67121    37005.971189     1205.820416
