@@ -69,11 +69,16 @@ def build_console_summary(frame: pd.DataFrame) -> str:
         "precision",
         "compiled",
         "mean_latency_ms",
+        "std_latency_ms",
         "tokens_per_sec",
         "peak_memory_mb",
+        "cpu_utilization_percent",
+        "gpu_utilization_percent",
     ]
-    display = frame.loc[:, columns].copy()
-    display["compiled"] = display["compiled"].map({True: "yes", False: "no"})
+    available_columns = [column for column in columns if column in frame.columns]
+    display = frame.loc[:, available_columns].copy()
+    if "compiled" in display.columns:
+        display["compiled"] = display["compiled"].map({True: "yes", False: "no"})
     return display.to_string(index=False)
 
 
