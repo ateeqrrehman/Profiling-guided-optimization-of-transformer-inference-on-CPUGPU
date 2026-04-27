@@ -1,0 +1,14 @@
+{
+  "platform": "Linux-6.6.113+-x86_64-with-glibc2.35",
+  "python": "3.12.13",
+  "torch": "2.10.0+cu128",
+  "transformers_device_count": 2,
+  "cpu_physical_cores": 1,
+  "cpu_logical_cores": 2,
+  "ram_gb": 13.61,
+  "cuda_available": true,
+  "gpu_name": "Tesla T4",
+  "gpu_total_memory_gb": 15.64,
+  "cuda_version": "12.8",
+  "bf16_supported": true
+}

@@ -1,0 +1,7 @@
+ experiment device  batch_size  seq_length precision compiled  mean_latency_ms  std_latency_ms  tokens_per_sec  peak_memory_mb  cpu_utilization_percent  gpu_utilization_percent
+compilation   cuda           4          32      fp32       no        10.448166        0.082997    12250.953900      370.513920                    42.53                     23.9
+compilation   cuda           4          32      fp32      yes         7.735229        1.778255    16547.668675      705.255424                    48.77                     55.6
+compilation   cuda           4         128      fp32       no        20.574703        3.257549    24884.927260      784.572416                    49.82                     61.5
+compilation   cuda           4         128      fp32      yes        17.113713        4.951609    29917.529409      784.572416                    86.11                     60.3
+compilation   cuda           4         256      fp32       no        38.069306        3.178879    26898.310362      888.426496                    96.98                     59.2
+compilation   cuda           4         256      fp32      yes        35.085901        5.045723    29185.512187      888.377344                    95.91                     44.0

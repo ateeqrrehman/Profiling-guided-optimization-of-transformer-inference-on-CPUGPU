@@ -1,0 +1,42 @@
+op_name,count,self_cpu_time_ms,cpu_time_ms,self_cuda_time_ms,cuda_time_ms,cpu_memory_mb,cuda_memory_mb
+TorchDynamo Cache Lookup,1,0.128581,0.128581,0.0,0.0,0.0,0.0
+Torch-Compiled Region: 0/3,1,0.11746799999999985,4.911272,0.0,0.0,0.0,0.0
+Pregraph bytecode,1,0.027043000000000008,0.027043000000000008,0.0,0.0,0.0,0.0
+AOTDispatcher Runtime Wrapper Prologue,1,0.006471000000000004,0.006471000000000004,0.0,0.0,0.0,0.0
+## Call CompiledFxGraph flke37nbw5mox5yd4t5sxyrdkwo7za35sspvgwdlemay5xis3nin ##,1,1.5563349999999991,4.76029,0.0,0.0,0.0,0.0
+Activity Buffer Request,1,0.6360220000000002,0.6360220000000002,0.0,0.0,0.0,0.0
+triton_red_fused_add_arange_embedding_native_layer_norm_unsqueeze_0,1,0.03774499999999989,0.7259929999999999,0.0,0.0,0.0,0.0
+cuLaunchKernel,19,0.8327629999999981,0.8327629999999981,0.0,0.0,0.0,0.0
+aten::addmm,6,0.15781499999999846,0.24419799999999942,0.0,0.0,0.0,0.0
+cudaMemsetAsync,18,0.10618899999999871,0.10618899999999871,0.0,0.0,0.0,0.0
+cudaOccupancyMaxActiveBlocksPerMultiprocessor,19,0.025118000000001757,0.025118000000001757,0.0,0.0,0.0,0.0
+cudaLaunchKernel,31,0.22841400000000023,0.22841400000000023,0.0,0.0,0.0,0.0
+triton_poi_fused__scaled_dot_product_efficient_attention__to_copy_add_arange_bitwise_and_constant_pad_nd_expand_index_le_new_ones_scalar_tensor_slice_split_transpose_unsqueeze_view_where_1,1,0.029235000000000583,0.04123800000000028,0.0,0.0,0.0,0.0
+cuLaunchKernelEx,2,0.020090000000000146,0.020090000000000146,0.0,0.0,0.0,0.0
+aten::_scaled_dot_product_efficient_attention,6,0.09497699999999713,0.4467109999999993,0.0,0.0,9.6e-05,0.0
+aten::transpose,24,0.08910200000000078,0.11145100000000138,0.0,0.0,0.0,0.0
+aten::as_strided,26,0.02523600000000124,0.02523600000000124,0.0,0.0,0.0,0.0
+aten::_efficient_attention_forward,6,0.09266200000000117,0.2402830000000008,0.0,0.0,9.6e-05,0.0
+cudaStreamIsCapturing,6,0.009125999999999749,0.009125999999999749,0.0,0.0,0.0,0.0
+aten::empty,24,0.08442900000000009,0.08442900000000009,0.0,0.0,9.6e-05,0.0
+aten::mm,19,0.3870660000000007,0.6063380000000006,0.0,0.0,0.0,0.0
+triton_per_fused_add_addmm_arange_embedding_native_layer_norm_unsqueeze_view_2,1,0.02763299999999981,0.03845499999999993,0.0,0.0,0.0,0.0
+triton_poi_fused_add_addmm_mul_pow_tanh_view_3,6,0.08058000000000039,0.12927199999999947,0.0,0.0,0.0,0.0
+triton_per_fused_add_addmm_native_layer_norm_view_4,5,0.08405400000000009,0.12139899999999988,0.0,0.0,0.0,0.0
+triton_per_fused_add_addmm_native_layer_norm_view_5,5,0.11931700000000182,0.15846100000000116,0.0,0.0,0.0,0.0
+triton_poi_fused__scaled_dot_product_efficient_attention__to_copy_add_arange_bitwise_and_constant_pad_nd_expand_index_le_new_ones_scalar_tensor_slice_split_transpose_unsqueeze_view_where_6,1,0.023018000000000028,0.031105000000000473,0.0,0.0,0.0,0.0
+triton_per_fused_add_addmm_native_layer_norm_view_7,1,0.016251000000000203,0.02476299999999992,0.0,0.0,0.0,0.0
+aten::select,1,0.008428999999999178,0.010604999999999563,0.0,0.0,0.0,0.0
+aten::slice,1,0.003658999999999651,0.0043699999999998905,0.0,0.0,0.0,0.0
+[memory],1,0.0,0.0,0.0,0.0,0.0,0.0
+cudaDeviceSynchronize,2,10.874377,10.874377,0.0,0.0,0.0,0.0
+## Call CompiledFxGraph flke37nbw5mox5yd4t5sxyrdkwo7za35sspvgwdlemay5xis3nin ##,1,0.0,0.0,0.0,0.0,0.0,0.0
+triton_per_fused_add_addmm_native_layer_norm_view_5,4,0.0,0.0,0.0,0.0,0.0,0.0
+volta_sgemm_128x64_nn,14,0.0,0.0,0.0,0.0,0.0,0.0
+triton_poi_fused_add_addmm_mul_pow_tanh_view_3,4,0.0,0.0,0.0,0.0,0.0,0.0
+Memset (Device),10,0.0,0.0,0.0,0.0,0.0,0.0
+triton_per_fused_add_addmm_native_layer_norm_view_4,3,0.0,0.0,0.0,0.0,0.0,0.0
+"fmha_cutlassF_f32_aligned_64x64_rf_sm75(PyTorchMemEffAttention::AttentionKernel<float, cutlass::arch::Sm75, true, 64, 64, 64, true, true>::Params)",3,0.0,0.0,0.0,0.0,0.0,0.0
+triton_poi_fused__scaled_dot_product_efficient_attention__to_copy_add_arange_bitwise_and_constant_pad_nd_expand_index_le_new_ones_scalar_tensor_slice_split_transpose_unsqueeze_view_where_6,1,0.0,0.0,0.0,0.0,0.0,0.0
+triton_per_fused_add_addmm_native_layer_norm_view_7,1,0.0,0.0,0.0,0.0,0.0,0.0
+volta_sgemm_128x64_tn,1,0.0,0.0,0.0,0.0,0.0,0.0

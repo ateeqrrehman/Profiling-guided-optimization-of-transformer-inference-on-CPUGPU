@@ -19,86 +19,86 @@ Measured precision modes: bf16, fp16, fp32, int8_dynamic
 
 ## CPU vs GPU Analysis
 
-- **short (32 tokens):** CPU latency=326.37 ms, GPU latency=30.67 ms, GPU speedup=10.64x.
-- **medium (128 tokens):** CPU latency=548.22 ms, GPU latency=22.42 ms, GPU speedup=24.46x.
-- **long (256 tokens):** CPU latency=729.32 ms, GPU latency=81.45 ms, GPU speedup=8.95x.
+- **short (32 tokens):** CPU latency=102.28 ms, GPU latency=6.41 ms, GPU speedup=15.96x.
+- **medium (128 tokens):** CPU latency=311.66 ms, GPU latency=10.80 ms, GPU speedup=28.85x.
+- **long (256 tokens):** CPU latency=478.49 ms, GPU latency=18.39 ms, GPU speedup=26.01x.
 
 Interpretation: the GPU is expected to win because transformer inference contains many matrix operations that can be parallelized. The size of the speedup depends on sequence length, batch size, and overhead.
 
 ## Batch Size Analysis
 
 ### CPU
-- batch=1: latency=555.36 ms, throughput=230.48 tokens/s, peak memory=4901.28 MB
-- batch=2: latency=686.14 ms, throughput=373.10 tokens/s, peak memory=4931.99 MB
-- batch=4: latency=1216.78 ms, throughput=420.78 tokens/s, peak memory=4879.99 MB
-- batch=8: latency=2043.23 ms, throughput=501.17 tokens/s, peak memory=5087.67 MB
-- batch=16: latency=4183.19 ms, throughput=489.58 tokens/s, peak memory=5292.66 MB
-- Best throughput for CPU occurs at batch=8 with 501.17 tokens/s.
+- batch=1: latency=287.11 ms, throughput=445.83 tokens/s, peak memory=1701.31 MB
+- batch=2: latency=438.38 ms, throughput=583.97 tokens/s, peak memory=1701.54 MB
+- batch=4: latency=911.85 ms, throughput=561.50 tokens/s, peak memory=1744.89 MB
+- batch=8: latency=1831.17 ms, throughput=559.20 tokens/s, peak memory=1815.06 MB
+- batch=16: latency=3403.00 ms, throughput=601.82 tokens/s, peak memory=2002.48 MB
+- Best throughput for CPU occurs at batch=16 with 601.82 tokens/s.
 
 ### CUDA
-- batch=1: latency=66.51 ms, throughput=1924.64 tokens/s, peak memory=363.55 MB
-- batch=2: latency=74.63 ms, throughput=3430.03 tokens/s, peak memory=389.47 MB
-- batch=4: latency=131.16 ms, throughput=3903.63 tokens/s, peak memory=442.49 MB
-- batch=8: latency=231.92 ms, throughput=4415.30 tokens/s, peak memory=545.01 MB
-- batch=16: latency=337.25 ms, throughput=6072.65 tokens/s, peak memory=752.84 MB
-- Best throughput for CUDA occurs at batch=16 with 6072.65 tokens/s.
+- batch=1: latency=10.90 ms, throughput=11742.97 tokens/s, peak memory=370.89 MB
+- batch=2: latency=15.99 ms, throughput=16009.50 tokens/s, peak memory=396.81 MB
+- batch=4: latency=20.13 ms, throughput=25432.55 tokens/s, peak memory=449.83 MB
+- batch=8: latency=37.39 ms, throughput=27384.97 tokens/s, peak memory=552.35 MB
+- batch=16: latency=81.96 ms, throughput=24986.97 tokens/s, peak memory=760.18 MB
+- Best throughput for CUDA occurs at batch=8 with 27384.97 tokens/s.
 
 Interpretation: batching usually improves throughput by increasing hardware utilization, but very large batches can increase latency and memory pressure. The best batch size is therefore workload- and hardware-dependent.
 
 ## Sequence Length Analysis
 
 ### CPU
-- seq=32: latency=295.16 ms, throughput=108.42 tokens/s, peak memory=4926.85 MB
-- seq=128: latency=493.91 ms, throughput=259.16 tokens/s, peak memory=4946.69 MB
-- seq=256: latency=621.69 ms, throughput=411.78 tokens/s, peak memory=4979.54 MB
+- seq=32: latency=102.49 ms, throughput=312.23 tokens/s, peak memory=2050.51 MB
+- seq=128: latency=317.86 ms, throughput=402.69 tokens/s, peak memory=2050.83 MB
+- seq=256: latency=448.44 ms, throughput=570.87 tokens/s, peak memory=2051.23 MB
 
 ### CUDA
-- seq=32: latency=25.06 ms, throughput=1276.79 tokens/s, peak memory=343.95 MB
-- seq=128: latency=25.72 ms, throughput=4976.60 tokens/s, peak memory=363.55 MB
-- seq=256: latency=35.01 ms, throughput=7311.34 tokens/s, peak memory=389.68 MB
+- seq=32: latency=6.81 ms, throughput=4700.14 tokens/s, peak memory=351.29 MB
+- seq=128: latency=10.85 ms, throughput=11793.00 tokens/s, peak memory=370.89 MB
+- seq=256: latency=15.68 ms, throughput=16329.25 tokens/s, peak memory=397.02 MB
 
 Interpretation: sequence length is central for transformer workloads because longer inputs increase the amount of token interaction and memory movement in attention-related computation.
 
 ## Precision Analysis
 
 ### CPU
-- fp32: latency=1187.05 ms, throughput=431.32 tokens/s, peak memory=4916.58 MB, perplexity proxy=2593.87
-- int8_dynamic: latency=1079.04 ms, throughput=474.50 tokens/s, peak memory=5462.94 MB, perplexity proxy=4082.06
-- Best throughput for CPU is int8_dynamic with 474.50 tokens/s.
+- fp32: latency=815.89 ms, throughput=627.54 tokens/s, peak memory=2056.74 MB, perplexity proxy=2593.88
+- int8_dynamic: latency=803.23 ms, throughput=637.42 tokens/s, peak memory=2226.42 MB, perplexity proxy=4082.07
+- Best throughput for CPU is int8_dynamic with 637.42 tokens/s.
 
 ### CUDA
-- bf16: latency=78.00 ms, throughput=6563.70 tokens/s, peak memory=728.54 MB, perplexity proxy=2726.65
-- fp16: latency=48.12 ms, throughput=10640.25 tokens/s, peak memory=560.52 MB, perplexity proxy=2595.38
-- fp32: latency=124.74 ms, throughput=4104.49 tokens/s, peak memory=442.49 MB, perplexity proxy=2593.88
-- Best throughput for CUDA is fp16 with 10640.25 tokens/s.
+- bf16: latency=31.37 ms, throughput=16321.81 tokens/s, peak memory=748.46 MB, perplexity proxy=2635.04
+- fp16: latency=8.36 ms, throughput=61224.26 tokens/s, peak memory=574.15 MB, perplexity proxy=2594.58
+- fp32: latency=21.27 ms, throughput=24072.78 tokens/s, peak memory=449.83 MB, perplexity proxy=2593.89
+- Best throughput for CUDA is fp16 with 61224.26 tokens/s.
 
 Interpretation: reduced precision can improve speed or memory efficiency, but the result depends on hardware support and implementation overhead. The quality column is a fixed-prompt perplexity proxy, so it should be interpreted as a lightweight sanity check rather than a full language-model benchmark.
 
 ## Compilation Analysis
 
 - Compile-requested rows: 6
-- Actually compiled rows: 0
-- Fallback/non-compiled rows after compile request: 6
+- Actually compiled rows: 6
+- Fallback/non-compiled rows after compile request: 0
 
 ### CPU
-- seq=32: eager=301.79 ms, compile-requested=541.03 ms, delta=-239.24 ms, actual compiled=False.
-- seq=128: eager=1154.66 ms, compile-requested=1126.02 ms, delta=28.64 ms, actual compiled=False.
-- seq=256: eager=1993.53 ms, compile-requested=2026.27 ms, delta=-32.74 ms, actual compiled=False.
+- seq=32: eager=252.57 ms, compile-requested=224.31 ms, delta=28.26 ms, actual compiled=True.
+- seq=128: eager=990.77 ms, compile-requested=824.87 ms, delta=165.89 ms, actual compiled=True.
+- seq=256: eager=1748.19 ms, compile-requested=1696.65 ms, delta=51.54 ms, actual compiled=True.
 
 ### CUDA
-- seq=32: eager=110.90 ms, compile-requested=61.95 ms, delta=48.95 ms, actual compiled=False.
-- seq=128: eager=132.94 ms, compile-requested=120.36 ms, delta=12.58 ms, actual compiled=False.
-- seq=256: eager=188.04 ms, compile-requested=158.40 ms, delta=29.64 ms, actual compiled=False.
+- seq=32: eager=9.43 ms, compile-requested=13.36 ms, delta=-3.93 ms, actual compiled=True.
+- seq=128: eager=20.99 ms, compile-requested=16.11 ms, delta=4.88 ms, actual compiled=True.
+- seq=256: eager=38.73 ms, compile-requested=34.40 ms, delta=4.33 ms, actual compiled=True.
 
-Important caveat: some compile-requested runs did not remain marked as compiled in the final results. This usually means PyTorch compilation fell back or the local environment did not fully support the requested backend. The benchmark still records those rows so the limitation is visible rather than hidden.
+All compile-requested rows remained compiled, so this run provides a direct eager-vs-compiled comparison.
 
 ## Compute-bound vs Memory-bound Interpretation
 
-- Average measured GPU utilization: 58.21%
-- Maximum measured GPU utilization: 90.20%
+- Average measured GPU utilization: 45.19%
+- Maximum measured GPU utilization: 80.80%
 - Interpretation: this run shows mixed behavior; some workloads use the GPU well, while others are limited by overhead, memory, or small batch effects.
-- CPU batch sweep: memory increases by 391.39 MB from smallest to largest batch, while throughput changes by 2.12x.
-- CUDA batch sweep: memory increases by 389.30 MB from smallest to largest batch, while throughput changes by 3.16x.
+- CPU batch sweep: memory increases by 301.17 MB from smallest to largest batch, while throughput changes by 1.35x.
+- CUDA batch sweep: memory increases by 389.30 MB from smallest to largest batch, while throughput changes by 2.13x.
 Overall interpretation: the project should not claim a single universal bottleneck. Instead, the evidence should be framed as workload-dependent: small batches may be overhead-limited, larger batches improve throughput until memory pressure or saturation appears, and longer sequences increase transformer-specific memory/computation cost.
 
 ## Workload-aware Selector Validation

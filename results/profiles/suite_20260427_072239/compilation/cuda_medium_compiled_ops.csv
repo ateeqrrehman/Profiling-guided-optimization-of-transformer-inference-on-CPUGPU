@@ -1,0 +1,45 @@
+op_name,count,self_cpu_time_ms,cpu_time_ms,self_cuda_time_ms,cuda_time_ms,cpu_memory_mb,cuda_memory_mb
+TorchDynamo Cache Lookup,1,0.31815599999999994,0.31815599999999994,0.0,0.0,0.0,0.0
+Torch-Compiled Region: 0/2,1,0.15152600000000074,7.3875910000000005,0.0,0.0,0.0,0.0
+Pregraph bytecode,1,0.046697999999999976,0.046697999999999976,0.0,0.0,0.0,0.0
+AOTDispatcher Runtime Wrapper Prologue,1,0.009381000000000085,0.009381000000000085,0.0,0.0,0.0,0.0
+## Call CompiledFxGraph flke37nbw5mox5yd4t5sxyrdkwo7za35sspvgwdlemay5xis3nin ##,1,2.1131280000000014,7.1799859999999995,0.0,0.0,0.0,0.0
+Activity Buffer Request,1,2.220227,2.220227,0.0,0.0,0.0,0.0
+triton_red_fused_add_arange_embedding_native_layer_norm_unsqueeze_0,1,0.043581000000000134,0.08477399999999989,0.0,0.0,0.0,0.0
+cuLaunchKernel,19,0.222154,0.222154,0.0,0.0,0.0,0.0
+## Call CompiledFxGraph flke37nbw5mox5yd4t5sxyrdkwo7za35sspvgwdlemay5xis3nin ##,1,0.0,0.0,0.0,0.0,0.0,0.0
+triton_red_fused_add_arange_embedding_native_layer_norm_unsqueeze_0,1,0.0,0.0,0.0,0.0,0.0,0.0
+aten::addmm,6,0.26430100000000223,0.38468500000000083,0.0,0.0,0.0,0.0
+cudaMemsetAsync,18,0.1664299999999971,0.1664299999999971,0.0,0.0,0.0,0.0
+cudaOccupancyMaxActiveBlocksPerMultiprocessor,19,0.04273499999999649,0.04273499999999649,0.0,0.0,0.0,0.0
+Memset (Device),18,0.0,0.0,0.0,0.0,0.0,0.0
+cudaLaunchKernel,31,0.2965579999999991,0.2965579999999991,0.0,0.0,0.0,0.0
+volta_sgemm_128x64_nn,24,0.0,0.0,0.0,0.0,0.0,0.0
+triton_poi_fused__scaled_dot_product_efficient_attention__to_copy_add_arange_bitwise_and_constant_pad_nd_expand_index_le_new_ones_scalar_tensor_slice_split_transpose_unsqueeze_view_where_1,1,0.043998999999999344,0.05892499999999973,0.0,0.0,0.0,0.0
+cuLaunchKernelEx,2,0.025728000000000067,0.025728000000000067,0.0,0.0,0.0,0.0
+aten::_scaled_dot_product_efficient_attention,6,0.2163760000000034,0.7967190000000001,0.0,0.0,9.6e-05,0.0
+triton_poi_fused__scaled_dot_product_efficient_attention__to_copy_add_arange_bitwise_and_constant_pad_nd_expand_index_le_new_ones_scalar_tensor_slice_split_transpose_unsqueeze_view_where_1,1,0.0,0.0,0.0,0.0,0.0,0.0
+aten::transpose,24,0.09422799999999824,0.13363799999999856,0.0,0.0,0.0,0.0
+aten::as_strided,26,0.042708000000000995,0.042708000000000995,0.0,0.0,0.0,0.0
+aten::_efficient_attention_forward,6,0.21659799999999904,0.44670499999999813,0.0,0.0,9.6e-05,0.0
+cudaStreamIsCapturing,6,0.013456000000000131,0.013456000000000131,0.0,0.0,0.0,0.0
+aten::empty,24,0.1402690000000007,0.1402690000000007,0.0,0.0,9.6e-05,0.0
+"fmha_cutlassF_f32_aligned_64x64_rf_sm75(PyTorchMemEffAttention::AttentionKernel<float, cutlass::arch::Sm75, true, 64, 64, 64, true, true>::Params)",6,0.0,0.0,0.0,0.0,0.0,0.0
+aten::mm,19,0.5366130000000021,0.8455699999999979,0.0,0.0,0.0,0.0
+triton_per_fused_add_addmm_arange_embedding_native_layer_norm_unsqueeze_view_2,1,0.03848199999999997,0.054079000000000634,0.0,0.0,0.0,0.0
+triton_per_fused_add_addmm_arange_embedding_native_layer_norm_unsqueeze_view_2,1,0.0,0.0,0.0,0.0,0.0,0.0
+triton_poi_fused_add_addmm_mul_pow_tanh_view_3,6,0.10320799999999963,0.1563139999999994,0.0,0.0,0.0,0.0
+triton_per_fused_add_addmm_native_layer_norm_view_4,5,0.13246900000000006,0.18608900000000086,0.0,0.0,0.0,0.0
+triton_poi_fused_add_addmm_mul_pow_tanh_view_3,6,0.0,0.0,0.0,0.0,0.0,0.0
+triton_per_fused_add_addmm_native_layer_norm_view_5,5,0.15645900000000074,0.2050699999999997,0.0,0.0,0.0,0.0
+triton_per_fused_add_addmm_native_layer_norm_view_4,5,0.0,0.0,0.0,0.0,0.0,0.0
+triton_per_fused_add_addmm_native_layer_norm_view_5,5,0.0,0.0,0.0,0.0,0.0,0.0
+triton_poi_fused__scaled_dot_product_efficient_attention__to_copy_add_arange_bitwise_and_constant_pad_nd_expand_index_le_new_ones_scalar_tensor_slice_split_transpose_unsqueeze_view_where_6,1,0.03133600000000024,0.04213799999999992,0.0,0.0,0.0,0.0
+triton_per_fused_add_addmm_native_layer_norm_view_7,1,0.022240999999999986,0.032268000000000026,0.0,0.0,0.0,0.0
+aten::select,1,0.009198999999999614,0.01161999999999989,0.0,0.0,0.0,0.0
+aten::slice,1,0.00503099999999904,0.005907999999999447,0.0,0.0,0.0,0.0
+[memory],1,0.0,0.0,0.0,0.0,0.0,0.0
+cudaDeviceSynchronize,2,9.554730999999997,9.554730999999997,0.0,0.0,0.0,0.0
+triton_poi_fused__scaled_dot_product_efficient_attention__to_copy_add_arange_bitwise_and_constant_pad_nd_expand_index_le_new_ones_scalar_tensor_slice_split_transpose_unsqueeze_view_where_6,1,0.0,0.0,0.0,0.0,0.0,0.0
+triton_per_fused_add_addmm_native_layer_norm_view_7,1,0.0,0.0,0.0,0.0,0.0,0.0
+volta_sgemm_128x64_tn,1,0.0,0.0,0.0,0.0,0.0,0.0

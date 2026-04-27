@@ -53,7 +53,7 @@ class RunSettings:
     warmup_runs: int = 3
     measure_runs: int = 10
     quality_seq_length: int = 64
-    compile_backend: str | None = "eager"
+    compile_backend: str | None = None
     output_root: Path = RESULTS_ROOT
     raw_results_dir: Path = RAW_RESULTS_DIR
     plots_dir: Path = PLOTS_DIR
